@@ -40,11 +40,7 @@ std::set<std::string> wordle(
     string temp_word = "";
     set<string> SuitableWordSet;
     findWord(in, floating, dict, empty_space, temp_word, SuitableWordSet);
-    cout << "before" << endl;
-    for (string words : SuitableWordSet)
-    {
-        cout << words << endl;
-    }
+
     return SuitableWordSet;
 }
 
@@ -80,8 +76,8 @@ void findWord(const std::string& in,
           if (dict.find(tempWord) != dict.end())
           {
               wordSet.insert(tempWord);
-              return;
           }
+          return;
         }
 
         // if the input word has a fixed letter here, then we add to the tempWord directly
